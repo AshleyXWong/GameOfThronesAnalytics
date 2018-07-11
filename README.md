@@ -11,7 +11,7 @@ battle_data <- read.csv("battles.csv", stringsAsFactors=FALSE)
 ### Analyzing by describing data 
 
 These are the following categories used to describe the data along with their data type and examples of the data: 
-```> str(battle_data)
+```{r}> str(battle_data)
 'data.frame':	38 obs. of  25 variables:
  $ name              : chr  "Battle of the Golden Tooth" "Battle at the Mummer's Ford" "Battle of Riverrun" "Battle of the Green Fork" ...
  $ year              : int  298 298 298 298 298 298 298 299 299 299 ...
@@ -41,3 +41,21 @@ These are the following categories used to describe the data along with their da
  ```
  
  Note: the defenders_3 and defenders_4 column are full of NA values and are thus labeled as having a logical datatype. 
+ 
+ What is the distribution of variables across the dataset?
+![pie_chart_attacking_house](https://user-images.githubusercontent.com/8938974/42578080-c96740a4-84f3-11e8-9882-51eccbbb7a1d.png)
+
+![distribution_of_attacking_house](https://user-images.githubusercontent.com/8938974/42578093-cfa656ee-84f3-11e8-8bf4-8ab1074ecbeb.png)
+
+* A total of 38 battles were fought between the years of 298-300
+```{r} > years_fought <- unique(battle_data$year)
+> years_fought
+[1] 298 299 300 
+> total_attacks <- nrow(battle_data) - sum(is.na(battle_data$attacker_1))
+> total_attacks
+[1] 38
+```
+* Out of 38 total battles, the houses of Stark and Lannister are the two that lead battles the most with each launching a total of 8
+* Following them, Greyjoy launched the third most with 7
+
+![plot 1-5](https://user-images.githubusercontent.com/8938974/42580828-6aa633da-84f9-11e8-82ab-f6bbcf13bb39.png)
