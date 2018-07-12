@@ -3,17 +3,22 @@ library(plotly)
 
 battle_data <- read.csv("battles.csv", stringsAsFactors=FALSE)
 battle_data$attacker_1[23] <- "Brotherhood"
+battle_data$defender_1[30] <- "Town of Saltpans"
+battle_data[battle_data == ""] <- NA
 
 attacker_main <- unique(battle_data$attacker_1)
-#a2 <- unique(battle_data$attacker_2)
-#a3 <- unique(battle_data$attacker_3)
-#a4 <- unique(battle_data$attacker_4)
-
+col_names <- names(battle_data)
 
 attacker_freq <- vector('character')
 for(i in 1:length(attacker_main)) {
   freq <- sum(battle_data$attacker_1 == attacker_main[i])
   attacker_freq <- c(attacker_freq, freq)
+}
+
+for(i in 1:ncol(battle_data)) {
+  if (any(is.na(battle_data[,i]))) {
+    print(c(col_names[i], sum(is.na(battle_data[,i]))))
+  }
 }
 
 png("main_attackers.png", width=720, height=480)
