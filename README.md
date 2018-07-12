@@ -5,13 +5,31 @@ We acquired the dataset from the following website on Kaggle: https://www.kaggle
 
 battle_data <- read.csv("battles.csv", stringsAsFactors=FALSE)
 
+### Modifying the dataset
+* Changing the name "Brotherhood without the Banners" to just "Brotherhood" because the original name created awkward margin spacing in the charts and graphs. 
+```{r }
+battle_data$attacker_1[23] <- "Brotherhood"
+```
+
+* Changed all empty string values "" to NA in order to count the number of NA's in the dataset easier. There are built in functions to calculate how many NA values are in a dataframe, but not for empty strings. 
+```{r }
+battle_data[battle_data == ""] <- NA"
+```
+
+* The value for defender_1 was missing from the dataset because in the Sack of Saltpans, the town of Saltpans was being raided and no one was defending the town. This lack of data was cumbersome to deal with, especially in graph 3, because it leads to there being a missing value on the y-axis (the defenders_1 axis). Therefore, in order to deal with that issue, we had to add the Town of Saltpan as the defenders against the attackers: Brave Companions. 
+```
+{r } battle_data$defender_1[30] <- "Town of Saltpans"
+```
+ 
+
 ### Notes about the data
 * defender_3 and defender_4 column lack data and are therefore each value is labeled as NA
 
 ### Analyzing by describing data 
 
 These are the following categories used to describe the data along with their data type and examples of the data: 
-```{r}> str(battle_data)
+```{r}
+> str(battle_data)
 'data.frame':	38 obs. of  25 variables:
  $ name              : chr  "Battle of the Golden Tooth" "Battle at the Mummer's Ford" "Battle of Riverrun" "Battle of the Green Fork" ...
  $ year              : int  298 298 298 298 298 298 298 299 299 299 ...
@@ -43,12 +61,15 @@ These are the following categories used to describe the data along with their da
  Note: the defenders_3 and defenders_4 column are full of NA values and are thus labeled as having a logical datatype. 
  
  What is the distribution of variables across the dataset?
+ Diagram 1.0
 ![pie_chart_attacking_house](https://user-images.githubusercontent.com/8938974/42578080-c96740a4-84f3-11e8-9882-51eccbbb7a1d.png)
 
+Diagram 1.1
 ![distribution_of_attacking_house](https://user-images.githubusercontent.com/8938974/42578093-cfa656ee-84f3-11e8-8bf4-8ab1074ecbeb.png)
 
 * A total of 38 battles were fought between the years of 298-300
-```{r} > years_fought <- unique(battle_data$year)
+```{r} 
+> years_fought <- unique(battle_data$year)
 > years_fought
 [1] 298 299 300 
 > total_attacks <- nrow(battle_data) - sum(is.na(battle_data$attacker_1))
@@ -58,4 +79,5 @@ These are the following categories used to describe the data along with their da
 * Out of 38 total battles, the houses of Stark and Lannister are the two that lead battles the most with each launching a total of 8
 * Following them, Greyjoy launched the third most with 7
 
+Diagram 1.2
 ![plot 1-5](https://user-images.githubusercontent.com/8938974/42580828-6aa633da-84f9-11e8-82ab-f6bbcf13bb39.png)
