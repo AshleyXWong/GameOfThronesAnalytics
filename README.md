@@ -17,13 +17,48 @@ battle_data[battle_data == ""] <- NA"
 ```
 
 * The value for defender_1 was missing from the dataset because in the Sack of Saltpans, the town of Saltpans was being raided and no one was defending the town. This lack of data was cumbersome to deal with, especially in graph 3, because it leads to there being a missing value on the y-axis (the defenders_1 axis). Therefore, in order to deal with that issue, we had to add the Town of Saltpan as the defenders against the attackers: Brave Companions. 
-```
-{r } battle_data$defender_1[30] <- "Town of Saltpans"
+```{r }
+battle_data$defender_1[30] <- "Town of Saltpans"
 ```
  
 
-### Notes about the data
-* defender_3 and defender_4 column lack data and are therefore each value is labeled as NA
+### Missing values in the dataset
+* Every value in the defender_3 and defender_4 columns is NA. Almost every value in the defender_2 column is NA. 
+```{r}
+> sum(is.na(battle_data$defender_2)) == nrow(battle_data)
+[1] FALSE
+> sum(is.na(battle_data$defender_3)) == nrow(battle_data)
+[1] TRUE
+> sum(is.na(battle_data$defender_4)) == nrow(battle_data)
+[1] TRUE
+```
+* There were 19 different columns out of 25 which had more than one NA value. 
+```{r}
+for(i in 1:ncol(battle_data)) {
+  if (any(is.na(battle_data[,i]))) {
+    print(c(col_names[i], sumz(is.na(battle_data[,i]))))
+  }
+}
+[1] "attacker_king" "2"            
+[1] "defender_king" "3"            
+[1] "attacker_2" "28"        
+[1] "attacker_3" "35"        
+[1] "attacker_4" "36"        
+[1] "defender_2" "36"        
+[1] "defender_3" "38"        
+[1] "defender_4" "38"        
+[1] "attacker_outcome" "1"               
+[1] "battle_type" "1"          
+[1] "major_death" "1"          
+[1] "major_capture" "1"            
+[1] "attacker_size" "14"           
+[1] "defender_size" "19"           
+[1] "attacker_commander" "1"                 
+[1] "defender_commander" "10"                
+[1] "summer" "1"     
+[1] "location" "1"       
+[1] "note" "33"  
+```
 
 ### Analyzing by describing data 
 
