@@ -111,6 +111,8 @@ Diagram 1.1
 > total_attacks
 [1] 38
 ```
+![attacker_pie-3](https://user-images.githubusercontent.com/8938974/42729080-377f5222-879a-11e8-8717-4fd1f95b0ec4.png)
+
 * Out of 38 total battles, the houses of Stark and Lannister are the two that lead battles the most with each launching a total of 8
 * Following them, Greyjoy launched the third most with 7
 
