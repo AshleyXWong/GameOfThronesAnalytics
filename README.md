@@ -118,3 +118,5 @@ Diagram 1.1
 
 Diagram 1.2
 ![plot 1-5](https://user-images.githubusercontent.com/8938974/42580828-6aa633da-84f9-11e8-82ab-f6bbcf13bb39.png)
+
+![rplot](https://user-images.githubusercontent.com/8938974/42729102-1a838854-879b-11e8-9b79-dc229235eb3f.jpeg)
