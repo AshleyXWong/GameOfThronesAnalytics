@@ -20,8 +20,12 @@ battle_data[battle_data == ""] <- NA"
 ```{r }
 battle_data$defender_1[30] <- "Town of Saltpans"
 ```
- 
 
+* The value for attack_outcome was missing from the dataset on row 38. The attack outcome of the Siege of Winterfell was found on the wikipedia page for Game of Thrones. 
+```{r }
+battle_data$attacker_outcome[38] <- "loss"
+```
+ 
 ### Missing values in the dataset
 * Every value in the defender_3 and defender_4 columns is NA. Almost every value in the defender_2 column is NA. 
 ```{r}
@@ -36,7 +40,7 @@ battle_data$defender_1[30] <- "Town of Saltpans"
 ```{r}
 for(i in 1:ncol(battle_data)) {
   if (any(is.na(battle_data[,i]))) {
-    print(c(col_names[i], sumz(is.na(battle_data[,i]))))
+    print(c(col_names[i], sum(is.na(battle_data[,i]))))
   }
 }
 [1] "attacker_king" "2"            
@@ -47,7 +51,6 @@ for(i in 1:ncol(battle_data)) {
 [1] "defender_2" "36"        
 [1] "defender_3" "38"        
 [1] "defender_4" "38"        
-[1] "attacker_outcome" "1"               
 [1] "battle_type" "1"          
 [1] "major_death" "1"          
 [1] "major_capture" "1"            
@@ -96,11 +99,12 @@ These are the following categories used to describe the data along with their da
  Note: the defenders_3 and defenders_4 column are full of NA values and are thus labeled as having a logical datatype. 
  
  What is the distribution of variables across the dataset?
+ 
  Diagram 1.0
 ![pie_chart_attacking_house](https://user-images.githubusercontent.com/8938974/42578080-c96740a4-84f3-11e8-9882-51eccbbb7a1d.png)
 
 Diagram 1.1
-![distribution_of_attacking_house](https://user-images.githubusercontent.com/8938974/42578093-cfa656ee-84f3-11e8-8bf4-8ab1074ecbeb.png)
+![plot 1-5](https://user-images.githubusercontent.com/8938974/42580828-6aa633da-84f9-11e8-82ab-f6bbcf13bb39.png)
 
 * A total of 38 battles were fought between the years of 298-300
 ```{r} 
@@ -111,12 +115,15 @@ Diagram 1.1
 > total_attacks
 [1] 38
 ```
+
+Diagram 1.2
 ![attacker_pie-3](https://user-images.githubusercontent.com/8938974/42729080-377f5222-879a-11e8-8717-4fd1f95b0ec4.png)
 
 * Out of 38 total battles, the houses of Stark and Lannister are the two that lead battles the most with each launching a total of 8
 * Following them, Greyjoy launched the third most with 7
 
-Diagram 1.2
-![plot 1-5](https://user-images.githubusercontent.com/8938974/42580828-6aa633da-84f9-11e8-82ab-f6bbcf13bb39.png)
+Diagram 1.3
 
-![rplot](https://user-images.githubusercontent.com/8938974/42729102-1a838854-879b-11e8-9b79-dc229235eb3f.jpeg)
+* This graph dictates which houses have fought each other over the years 
+* This graph does not show the number of battles that were fought between each house
+
