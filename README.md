@@ -100,11 +100,16 @@ These are the following categories used to describe the data along with their da
  
  What is the distribution of variables across the dataset?
  
- Diagram 1.0
+Diagram 1.0
 ![pie_chart_attacking_house](https://user-images.githubusercontent.com/8938974/42578080-c96740a4-84f3-11e8-9882-51eccbbb7a1d.png)
+Diagram 1.1
 ![rplot](https://user-images.githubusercontent.com/8938974/42729540-58cc2fa4-87a9-11e8-9f0f-c3da6d49d40e.jpeg)
-![defender](https://user-images.githubusercontent.com/8938974/42729791-c10ead6e-87b1-11e8-9e08-347f9f685086.jpeg)
-
+```{r }
+ggplot(battle_data, aes(attacker_1, fill=attacker_outcome)) +
+  geom_histogram(stat="count", width=0.5) +
+  labs(x="House", title="Battle Outcome of Attacking Houses") +
+  theme(axis.text.x = element_text(angle = 60, hjust = 1))
+```
 
 * A total of 38 battles were fought between the years of 298-300
 ```{r} 
@@ -116,12 +121,10 @@ These are the following categories used to describe the data along with their da
 [1] 38
 ```
 
-Diagram 1.2
-
 * Out of 38 total battles, the houses of Stark and Lannister are the two that lead battles the most with each launching a total of 8
 * Following them, Greyjoy launched the third most with 7
 
-Diagram 1.3
+Diagram 1.2
 ![plot 1-5](https://user-images.githubusercontent.com/8938974/42580828-6aa633da-84f9-11e8-82ab-f6bbcf13bb39.png)
 
 * This graph dictates which houses have fought each other over the years 
