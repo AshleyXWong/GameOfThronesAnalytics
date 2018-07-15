@@ -102,9 +102,7 @@ These are the following categories used to describe the data along with their da
  
  Diagram 1.0
 ![pie_chart_attacking_house](https://user-images.githubusercontent.com/8938974/42578080-c96740a4-84f3-11e8-9882-51eccbbb7a1d.png)
-
-Diagram 1.1
-![plot 1-5](https://user-images.githubusercontent.com/8938974/42580828-6aa633da-84f9-11e8-82ab-f6bbcf13bb39.png)
+![rplot](https://user-images.githubusercontent.com/8938974/42729540-58cc2fa4-87a9-11e8-9f0f-c3da6d49d40e.jpeg)
 
 * A total of 38 battles were fought between the years of 298-300
 ```{r} 
@@ -117,13 +115,15 @@ Diagram 1.1
 ```
 
 Diagram 1.2
-![attacker_pie-3](https://user-images.githubusercontent.com/8938974/42729080-377f5222-879a-11e8-8717-4fd1f95b0ec4.png)
 
 * Out of 38 total battles, the houses of Stark and Lannister are the two that lead battles the most with each launching a total of 8
 * Following them, Greyjoy launched the third most with 7
 
 Diagram 1.3
+![plot 1-5](https://user-images.githubusercontent.com/8938974/42580828-6aa633da-84f9-11e8-82ab-f6bbcf13bb39.png)
 
 * This graph dictates which houses have fought each other over the years 
 * This graph does not show the number of battles that were fought between each house
+
+
 
