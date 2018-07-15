@@ -109,6 +109,13 @@ ggplot(battle_data, aes(attacker_1, fill=attacker_outcome)) +
   theme(axis.text.x = element_text(angle = 60, hjust = 1))
 ```
 
+![type_of_battle_outcomes](https://user-images.githubusercontent.com/8938974/42729940-b9ddf9aa-87b6-11e8-9d28-6401406f0859.jpeg)
+![attack_type](https://user-images.githubusercontent.com/8938974/42729965-72227838-87b7-11e8-9f58-91db1884446f.jpeg)
+
+* These two graphs show which attack types the different houses of Westeros used over the three years
+* For example, the first graph shows that Baratheon used siege attack the most and Lannister used pitched battle the most
+* The second graph shows which attack type was used the most overall in Westeros over all of the different houses
+
 ![attacker_pie-3](https://user-images.githubusercontent.com/8938974/42729836-4a7e5742-87b3-11e8-99e2-22ebc55683c8.png)
 
 * A total of 38 battles were fought between the years of 298-300
