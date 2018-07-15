@@ -103,6 +103,8 @@ These are the following categories used to describe the data along with their da
  Diagram 1.0
 ![pie_chart_attacking_house](https://user-images.githubusercontent.com/8938974/42578080-c96740a4-84f3-11e8-9882-51eccbbb7a1d.png)
 ![rplot](https://user-images.githubusercontent.com/8938974/42729540-58cc2fa4-87a9-11e8-9f0f-c3da6d49d40e.jpeg)
+![defender](https://user-images.githubusercontent.com/8938974/42729791-c10ead6e-87b1-11e8-9e08-347f9f685086.jpeg)
+
 
 * A total of 38 battles were fought between the years of 298-300
 ```{r} 
