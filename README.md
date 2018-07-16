@@ -136,5 +136,9 @@ ggplot(battle_data, aes(attacker_1, fill=attacker_outcome)) +
 * This graph dictates which houses have fought each other over the years 
 * This graph does not show the number of battles that were fought between each house
 
+![battle_locations](https://user-images.githubusercontent.com/8938974/42742181-eeb26eec-8886-11e8-8e05-56f5d20f2f2f.jpeg)
+
+* Most of the houses who fought more than one battle in the three years also fought in more than one location (except for Baratheon who fought only in the region called Storm's End)
+
 
 
