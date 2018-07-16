@@ -140,5 +140,14 @@ ggplot(battle_data, aes(attacker_1, fill=attacker_outcome)) +
 
 * Most of the houses who fought more than one battle in the three years also fought in more than one location (except for Baratheon who fought only in the region called Storm's End)
 
+![sizevsarmieoutcome](https://user-images.githubusercontent.com/8938974/42742490-f501190e-8888-11e8-9110-d6de364269a2.jpeg)
+```{r }
+ggplot(battle_data, aes(defender_size, attacker_size)) +
+  geom_point(aes(color = attacker_outcome)) +
+  labs(x="Defender size", y="Attacker size", title="Size of Houses' Armies vs Attacker Outcome")
+```
+Does size matter?
+* In most cases, the house with the smaller army will win
+
 
 
