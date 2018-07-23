@@ -100,8 +100,15 @@ These are the following categories used to describe the data along with their da
  
  ## What is the distribution of variables across the dataset?
 
+### Attacking and Defending Houses
 ![pie_chart_attacking_house](https://user-images.githubusercontent.com/8938974/42578080-c96740a4-84f3-11e8-9882-51eccbbb7a1d.png)
+* Out of 38 total battles, the houses of Stark and Lannister are the two that lead battles the most with each launching a total of 8
+* Following them, Greyjoy launched the third most with 7
+![defending_houses_and_oponents](https://user-images.githubusercontent.com/8938974/43089964-133fd770-8e74-11e8-924e-2177ccddb036.jpeg)
+* The second graph graph dictates which houses have fought each other over the years 
+* The second graph does not show the number of battles that were fought between each house
 
+### Attacker House Battle Outcomes and Types
 ![outcomevstype](https://user-images.githubusercontent.com/8938974/43089100-d5e4667c-8e71-11e8-83a6-66702974c8c7.jpeg)
 ```{r } 
 outcome_graph <- ggplot(battle_data, aes(attacker_1, fill=attacker_outcome)) +
@@ -121,6 +128,7 @@ grid.arrange(outcome_graph, type_graph, ncol = 2)
 * For example, the first graph shows that Baratheon used siege attack the most and Lannister used pitched battle the most
 * The second graph shows which attack type was used the most overall in Westeros over all of the different houses
 
+### Years of Battles
 ![attacker_pie-3](https://user-images.githubusercontent.com/8938974/42729836-4a7e5742-87b3-11e8-99e2-22ebc55683c8.png)
 
 * A total of 38 battles were fought between the years of 298-300
@@ -133,27 +141,12 @@ grid.arrange(outcome_graph, type_graph, ncol = 2)
 [1] 38
 ```
 
-* Out of 38 total battles, the houses of Stark and Lannister are the two that lead battles the most with each launching a total of 8
-* Following them, Greyjoy launched the third most with 7
-
-![plot 1-5](https://user-images.githubusercontent.com/8938974/42580828-6aa633da-84f9-11e8-82ab-f6bbcf13bb39.png)
-
-* This graph dictates which houses have fought each other over the years 
-* This graph does not show the number of battles that were fought between each house
-
+### Locations of Battles
 ![battle_locations](https://user-images.githubusercontent.com/8938974/42742181-eeb26eec-8886-11e8-8e05-56f5d20f2f2f.jpeg)
 
 * Most of the houses who fought more than one battle in the three years also fought in more than one location (except for Baratheon who fought only in the region called Storm's End)
 
-![sizevsarmieoutcome](https://user-images.githubusercontent.com/8938974/42742490-f501190e-8888-11e8-9110-d6de364269a2.jpeg)
-```{r }
-ggplot(battle_data, aes(defender_size, attacker_size)) +
-  geom_point(aes(color = attacker_outcome)) +
-  labs(x="Defender size", y="Attacker size", title="Size of Houses' Armies vs Attacker Outcome")
-```
-Does size matter?
-* In most cases, the house with the smaller army will win
-
+### Army Size In Relation To Battle Outcome
 ![winsvsloses](https://user-images.githubusercontent.com/8938974/43087953-05908f02-8e6f-11e8-864e-2c09948ccf4f.jpeg)
 
 ```{r }
@@ -166,5 +159,7 @@ plot2 <- ggplot(lose, aes(x = defender_size, y = attacker_size)) + geom_point(sh
 grid.arrange(plot1, plot2, ncol=2)
 ```
 
+Does size matter?
+* In most cases, the house with the smaller army will win
 
 
