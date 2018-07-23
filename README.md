@@ -142,8 +142,7 @@ grid.arrange(outcome_graph, type_graph, ncol = 2)
 ```
 
 ### Locations of Battles
-![battle_locations](https://user-images.githubusercontent.com/8938974/42742181-eeb26eec-8886-11e8-8e05-56f5d20f2f2f.jpeg)
-
+![battle_locations_of_attackers](https://user-images.githubusercontent.com/8938974/43093825-2ca53646-8e7f-11e8-816d-8ab068d2c902.jpeg)
 * Most of the houses who fought more than one battle in the three years also fought in more than one location (except for Baratheon who fought only in the region called Storm's End)
 
 ### Army Size In Relation To Battle Outcome
