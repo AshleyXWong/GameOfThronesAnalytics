@@ -147,6 +147,15 @@ grid.arrange(outcome_graph, type_graph, ncol = 2)
 * Most of the houses who fought more than one battle in the three years also fought in more than one location (except for Baratheon who fought only in the region called Storm's End)
 
 ### Army Size In Relation To Battle Outcome
+![sizeofarmiesvsattackeroutcome](https://user-images.githubusercontent.com/8938974/43091322-c4bc03fe-8e77-11e8-98e5-28c7fa891d7e.jpeg)
+```{r }
+ggplot(battle_data, aes(defender_size, attacker_size)) +
+  geom_point(aes(color = attacker_outcome, shape = attacker_outcome), size = 4) +
+  geom_smooth(method=lm , color="purple", se=TRUE) + 
+  labs(x="Defender size", y="Attacker size", title="Size of Houses' Armies vs Attacker Outcome") 
+```
+* The purple regression line models the relationship between the size of the defender armies and the size of the attackers armies regardless of battle outcome
+
 ![winsvsloses](https://user-images.githubusercontent.com/8938974/43087953-05908f02-8e6f-11e8-864e-2c09948ccf4f.jpeg)
 
 ```{r }
@@ -154,10 +163,18 @@ win <- subset(battle_data, attacker_outcome == "win")
 lose <- subset(battle_data, attacker_outcome == "loss")
 
 theme(plot.title = element_text(hjust = 0.5))
-plot1 <- ggplot(win, aes(x = defender_size, y = attacker_size)) + geom_point(shape = 18, size = 3) + geom_smooth(method=lm , color="red", se=TRUE) + ggtitle("Wins") +   theme(plot.title = element_text(hjust = 0.5))
-plot2 <- ggplot(lose, aes(x = defender_size, y = attacker_size)) + geom_point(shape = 18, size = 3) + geom_smooth(method=lm , color="red", se=TRUE) + ggtitle("Loses") +   theme(plot.title = element_text(hjust = 0.5))
+plot1 <- ggplot(win, aes(x = defender_size, y = attacker_size)) + 
+           geom_point(shape = 18, size = 3) + 
+           geom_smooth(method=lm , color="red", se=TRUE) + ggtitle("Wins") + 
+           theme(plot.title = element_text(hjust = 0.5))
+plot2 <- ggplot(lose, aes(x = defender_size, y = attacker_size)) + 
+           geom_point(shape = 18, size = 3) + 
+           geom_smooth(method=lm , color="red", se=TRUE) + ggtitle("Loses") + 
+           theme(plot.title = element_text(hjust = 0.5))
+           
 grid.arrange(plot1, plot2, ncol=2)
 ```
+* The red regression line models the relationship between the size of the defender armies and the size of the attackers armies in relation to battle outcome
 
 Does size matter?
 * In most cases, the house with the smaller army will win
