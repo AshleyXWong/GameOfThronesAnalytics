@@ -98,16 +98,9 @@ These are the following categories used to describe the data along with their da
  
  Note: the defenders_3 and defenders_4 column are full of NA values and are thus labeled as having a logical datatype. 
  
- What is the distribution of variables across the dataset?
+ ## What is the distribution of variables across the dataset?
 
 ![pie_chart_attacking_house](https://user-images.githubusercontent.com/8938974/42578080-c96740a4-84f3-11e8-9882-51eccbbb7a1d.png)
-![rplot](https://user-images.githubusercontent.com/8938974/42729540-58cc2fa4-87a9-11e8-9f0f-c3da6d49d40e.jpeg)
-```{r }
-ggplot(battle_data, aes(attacker_1, fill=attacker_outcome)) +
-  geom_histogram(stat="count", width=0.5) +
-  labs(x="House", title="Battle Outcome of Attacking Houses") +
-  theme(axis.text.x = element_text(angle = 60, hjust = 1))
-```
 
 ![outcomevstype](https://user-images.githubusercontent.com/8938974/43089100-d5e4667c-8e71-11e8-83a6-66702974c8c7.jpeg)
 ```{r } 
