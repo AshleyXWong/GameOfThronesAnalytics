@@ -160,6 +160,7 @@ ggplot(battle_data, aes(defender_size, attacker_size)) +
   labs(x="Defender size", y="Attacker size", title="Size of Houses' Armies vs Attacker Outcome") 
 ```
 * The purple regression line models the relationship between the size of the defender armies and the size of the attackers armies regardless of battle outcome
+* The linear regression line shows a negative relation between defender army sizes and attacker army sizes 
 
 ![winsvsloses](https://user-images.githubusercontent.com/8938974/43087953-05908f02-8e6f-11e8-864e-2c09948ccf4f.jpeg)
 
@@ -180,8 +181,9 @@ plot2 <- ggplot(lose, aes(x = defender_size, y = attacker_size)) +
 grid.arrange(plot1, plot2, ncol=2)
 ```
 * The red regression line models the relationship between the size of the defender armies and the size of the attackers armies in relation to battle outcome
+* There is a positive relationship between the the size of the defender armies and the size of the attackers armies when the attacking house wins 
+* There is a negative relationship between the size of the defender armies and the size of the attackers armies when the attacking house loses
+* This shows that when the size of the attackering houses armies are smaller than that of the defending armies, the attacking houses tend to win
 
-Does size matter?
-* In most cases, the house with the smaller army will win
 
 
