@@ -149,5 +149,17 @@ ggplot(battle_data, aes(defender_size, attacker_size)) +
 Does size matter?
 * In most cases, the house with the smaller army will win
 
+![winsvsloses](https://user-images.githubusercontent.com/8938974/43087953-05908f02-8e6f-11e8-864e-2c09948ccf4f.jpeg)
+
+```{r }
+win <- subset(battle_data, attacker_outcome == "win")
+lose <- subset(battle_data, attacker_outcome == "loss")
+
+theme(plot.title = element_text(hjust = 0.5))
+plot1 <- ggplot(win, aes(x = defender_size, y = attacker_size)) + geom_point(shape = 18, size = 3) + geom_smooth(method=lm , color="red", se=TRUE) + ggtitle("Wins") +   theme(plot.title = element_text(hjust = 0.5))
+plot2 <- ggplot(lose, aes(x = defender_size, y = attacker_size)) + geom_point(shape = 18, size = 3) + geom_smooth(method=lm , color="red", se=TRUE) + ggtitle("Loses") +   theme(plot.title = element_text(hjust = 0.5))
+grid.arrange(plot1, plot2, ncol=2)
+```
+
 
 
