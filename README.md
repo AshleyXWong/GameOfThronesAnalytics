@@ -109,8 +109,20 @@ ggplot(battle_data, aes(attacker_1, fill=attacker_outcome)) +
   theme(axis.text.x = element_text(angle = 60, hjust = 1))
 ```
 
-![type_of_battle_outcomes](https://user-images.githubusercontent.com/8938974/42729940-b9ddf9aa-87b6-11e8-9d28-6401406f0859.jpeg)
-![attack_type](https://user-images.githubusercontent.com/8938974/42729965-72227838-87b7-11e8-9f58-91db1884446f.jpeg)
+![outcomevstype](https://user-images.githubusercontent.com/8938974/43089100-d5e4667c-8e71-11e8-83a6-66702974c8c7.jpeg)
+```{r } 
+outcome_graph <- ggplot(battle_data, aes(attacker_1, fill=attacker_outcome)) +
+  geom_histogram(stat="count", width=0.5) +
+  labs(x="House", title="Battle Outcome of Attacking Houses") +
+  theme(axis.text.x = element_text(angle = 60, hjust = 1))
+
+type_graph <- ggplot(battle_data, aes(attacker_1, fill=battle_type)) +
+  geom_histogram(stat="count", width=0.5) +
+  labs(x="House", title="Battle Types of Attacking Houses") +
+  theme(axis.text.x = element_text(angle = 60, hjust = 1))
+
+grid.arrange(outcome_graph, type_graph, ncol = 2)
+```
 
 * These two graphs show which attack types the different houses of Westeros used over the three years
 * For example, the first graph shows that Baratheon used siege attack the most and Lannister used pitched battle the most
