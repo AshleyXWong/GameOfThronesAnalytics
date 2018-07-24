@@ -25,6 +25,9 @@ battle_data$defender_1[30] <- "Town of Saltpans"
 ```{r }
 battle_data$attacker_outcome[38] <- "loss"
 ```
+### Necessary Libraries
+* ggplot2
+* gridExtra
  
 ### Missing values in the dataset
 * Every value in the defender_3 and defender_4 columns is NA. Almost every value in the defender_2 column is NA. 
