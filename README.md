@@ -190,4 +190,10 @@ grid.arrange(plot1, plot2, ncol=2)
 * This could be because that although the points fit a general trend, they are quite varied
 * In addition, the outliers/residual points differ from the "normal" points, or the other points which fit the general trend, by values reaching 10,000 (which is a lot)!
 * According to Peters Rule of Thumb, there should be at least 10 observations per variable or covariate (which of course depends on the situation. There are only four points in the second army size graph labeled "Loss" so extrapolating an accurate linear regression line is difficult.
-Krishna's edits coming...
+
+### Major Deaths and Captures
+![deathsvscaptures](https://user-images.githubusercontent.com/8938974/43152110-a18130e8-8f3b-11e8-9b59-0e99509f1719.jpeg)
+* The first graph shows whether major characters' deaths occurred over time over the course of 38 unique battles
+* This graph shows an overall decline in occurances of major deaths over the course of three years
+* The second graph shows whetther major captures in battles occured over time over the course of 38 unique battles
+* The second graph shows an overall small decline in occurances of major captures in battle over the course of three years
