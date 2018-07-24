@@ -190,4 +190,4 @@ grid.arrange(plot1, plot2, ncol=2)
 * This could be because that although the points fit a general trend, they are quite varied
 * In addition, the outliers/residual points differ from the "normal" points, or the other points which fit the general trend, by values reaching 10,000 (which is a lot)!
 * According to Peters Rule of Thumb, there should be at least 10 observations per variable or covariate (which of course depends on the situation. There are only four points in the second army size graph labeled "Loss" so extrapolating an accurate linear regression line is difficult.
-
+Krishna's edits coming...
