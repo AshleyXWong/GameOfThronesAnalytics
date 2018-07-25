@@ -15,16 +15,13 @@ battle_data$attacker_1[23] <- "Brotherhood"
 ```{r }
 battle_data[battle_data == ""] <- NA"
 ```
-
-* The value for defender_1 was missing from the dataset because in the Sack of Saltpans, the town of Saltpans was being raided and no one was defending the town. This lack of data was cumbersome to deal with, especially in graph 3, because it leads to there being a missing value on the y-axis (the defenders_1 axis). Therefore, in order to deal with that issue, we had to add the Town of Saltpan as the defenders against the attackers: Brave Companions. 
+* Some values were missing in the dataset so we added values in based on the wikipage of Game of Thrones
 ```{r }
 battle_data$defender_1[30] <- "Town of Saltpans"
+battle_data$attacker_outcome[38] <- "loss"
+battle_data$battle_type[38] <- "siege"
 ```
 
-* The value for attack_outcome was missing from the dataset on row 38. The attack outcome of the Siege of Winterfell was found on the wikipedia page for Game of Thrones. 
-```{r }
-battle_data$attacker_outcome[38] <- "loss"
-```
 ### Necessary Libraries
 * ggplot2
 * gridExtra
